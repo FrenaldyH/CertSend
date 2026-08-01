@@ -9,11 +9,15 @@ import (
 	"path/filepath"
 )
 
+// Certificate holds a single certificate file loaded into memory,
+// identified by its original file name (including extension), ready
+// to be matched against a recipient and attached to an email.
 type Certificate struct {
 	Name string
 	File []byte
 }
 
+// InputPDF reads a single PDF certificate file from disk into memory.
 func InputPDF(path string) (Certificate, error) {
 	file, err := os.ReadFile(path)
 	if err != nil {
@@ -36,6 +40,10 @@ func InputPDF(path string) (Certificate, error) {
 	return certificate, nil
 }
 
+// InputZip opens a ZIP archive and reads every certificate file inside
+// it into memory. Directory entries are skipped. If an individual
+// entry fails to open or read, it is logged and skipped rather than
+// failing the whole batch.
 func InputZip(path string) ([]Certificate, error) {
 	folder, err := zip.OpenReader(path)
 	if err != nil {

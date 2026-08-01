@@ -8,12 +8,19 @@ import (
 	"strings"
 )
 
+// Entry represents one row of the CSV mapping: a participant's name,
+// NRP, and email address.
 type Entry struct {
 	Name  string
 	NRP   string
 	Email string
 }
 
+// ParseCSV reads the CSV file at pathCSV and converts each data row
+// into an Entry. The header row must contain "name", "nrp", and
+// "email" columns (case-insensitive, in any order); a UTF-8 BOM on
+// the first header cell (common in Excel-exported CSVs) is stripped
+// automatically.
 func ParseCSV(pathCSV string) ([]Entry, error) {
 	fileCSV, err := os.Open(pathCSV)
 	if err != nil {
