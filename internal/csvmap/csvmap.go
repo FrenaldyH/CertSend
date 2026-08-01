@@ -36,7 +36,7 @@ func ParseCSV(pathCSV string) ([]Entry, error) {
 			"csvPath", pathCSV,
 			"error", err,
 		)
-		return nil, err
+		return nil, fmt.Errorf("%s : %w", errMsg, err)
 	}
 	if len(records) == 0 {
 		errMsg := "csv file is empty"
