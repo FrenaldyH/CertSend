@@ -64,8 +64,8 @@ func TestInputPDF_Success(t *testing.T) {
 		t.Fatalf("InputPDF returned an unexpected error: %v", err)
 	}
 
-	if cert.Name != "budi.pdf" {
-		t.Errorf("got Name %q, want %q", cert.Name, "budi.pdf")
+	if cert.FileName != "budi.pdf" {
+		t.Errorf("got Name %q, want %q", cert.FileName, "budi.pdf")
 	}
 	if string(cert.File) != string(want) {
 		t.Errorf("got File %q, want %q", cert.File, want)
@@ -99,7 +99,7 @@ func TestInputZip_Success(t *testing.T) {
 
 	got := map[string]string{}
 	for _, c := range certs {
-		got[c.Name] = string(c.File)
+		got[c.FileName] = string(c.File)
 	}
 	for name, content := range entries {
 		if got[name] != content {
@@ -141,8 +141,8 @@ func TestInputZip_SkipsDirectoryEntries(t *testing.T) {
 	if len(certs) != 1 {
 		t.Fatalf("got %d certificates, want 1 (the directory entry should be skipped)", len(certs))
 	}
-	if certs[0].Name != "budi.pdf" {
-		t.Errorf("got Name %q, want %q", certs[0].Name, "budi.pdf")
+	if certs[0].FileName != "budi.pdf" {
+		t.Errorf("got Name %q, want %q", certs[0].FileName, "budi.pdf")
 	}
 }
 

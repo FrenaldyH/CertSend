@@ -13,8 +13,8 @@ import (
 // identified by its original file name (including extension), ready
 // to be matched against a recipient and attached to an email.
 type Certificate struct {
-	Name string
-	File []byte
+	FileName string
+	File     []byte
 }
 
 // InputPDF reads a single PDF certificate file from disk into memory.
@@ -33,8 +33,8 @@ func InputPDF(path string) (Certificate, error) {
 	name := filepath.Base(path)
 
 	certificate := Certificate{
-		Name: name,
-		File: file,
+		FileName: name,
+		File:     file,
 	}
 
 	return certificate, nil
@@ -95,8 +95,8 @@ func InputZip(path string) ([]Certificate, error) {
 		certificates = append(
 			certificates,
 			Certificate{
-				Name: name,
-				File: content,
+				FileName: name,
+				File:     content,
 			},
 		)
 	}
