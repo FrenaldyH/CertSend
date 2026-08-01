@@ -1,0 +1,22 @@
+build/bin
+node_modules
+frontend/dist
+frontend/package.json.md5
+
+# Ignore hidden file except .gitignore
+.*
+!*gitignore
+
+# Personal Data
+data/
+
+# Ignore Logs
+logs/*
+Logs/*
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Go test artifacts
+*.test
+*.out
