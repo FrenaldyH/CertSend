@@ -1,4 +1,4 @@
-module CertSend
+module github.com/FrenaldyH/CertSend
 
 go 1.25.0
 

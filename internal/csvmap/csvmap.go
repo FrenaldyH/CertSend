@@ -1,11 +1,12 @@
 package csvmap
 
 import (
-	"CertSend/pkg/logger"
 	"encoding/csv"
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/FrenaldyH/CertSend/pkg/logger"
 )
 
 // Entry represents one row of the CSV mapping: a participant's name,

@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"CertSend/pkg/logger"
+	"github.com/FrenaldyH/CertSend/pkg/logger"
 )
 
 // TestMain initializes logger.Log once before any test in this

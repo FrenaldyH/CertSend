@@ -1,12 +1,14 @@
 package mailer
 
 import (
-	"CertSend/internal/matcher"
-	"CertSend/pkg/logger"
 	"bytes"
 	"errors"
 	"fmt"
 	"time"
+
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/matcher"
 
 	"github.com/wneessen/go-mail"
 )

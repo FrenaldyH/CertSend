@@ -1,11 +1,13 @@
 package main
 
 import (
-	"CertSend/internal/service"
-	"CertSend/pkg/logger"
 	"context"
 	"fmt"
 	"time"
+
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/service"
 )
 
 // App struct
@@ -33,10 +35,10 @@ func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
 }
 
-func (a *App) SendCertificates(certPath string, csvPath string, host string, port int, username string, password string, delaySeconds int) (error) {
+func (a *App) SendCertificates(certPath string, csvPath string, host string, port int, username string, password string, delaySeconds int) error {
 	smtp := service.SMTPConfig{
-		Host: host,
-		Port: port,
+		Host:     host,
+		Port:     port,
 		Username: username,
 		Password: password,
 	}
@@ -44,6 +46,6 @@ func (a *App) SendCertificates(certPath string, csvPath string, host string, por
 		certPath,
 		csvPath,
 		smtp,
-		time.Duration(delaySeconds) * time.Second,
+		time.Duration(delaySeconds)*time.Second,
 	)
 }

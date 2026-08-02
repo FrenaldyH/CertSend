@@ -1,10 +1,13 @@
 package matcher
 
 import (
-	"CertSend/internal/certificate"
-	"CertSend/internal/csvmap"
-	"CertSend/pkg/logger"
 	"strings"
+
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/csvmap"
+
+	"github.com/FrenaldyH/CertSend/internal/certificate"
 )
 
 // Data pairs one certificate file with its recipient, ready to be

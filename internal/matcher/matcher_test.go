@@ -4,9 +4,11 @@ import (
 	"os"
 	"testing"
 
-	"CertSend/internal/certificate"
-	"CertSend/internal/csvmap"
-	"CertSend/pkg/logger"
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/csvmap"
+
+	"github.com/FrenaldyH/CertSend/internal/certificate"
 )
 
 // TestMain initializes logger.Log once before any test in this

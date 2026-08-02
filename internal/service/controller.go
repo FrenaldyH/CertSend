@@ -7,11 +7,15 @@ import (
 	"strings"
 	"time"
 
-	"CertSend/internal/certificate"
-	"CertSend/internal/csvmap"
-	"CertSend/internal/matcher"
-	"CertSend/internal/mailer"
-	"CertSend/pkg/logger"
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/matcher"
+
+	"github.com/FrenaldyH/CertSend/internal/mailer"
+
+	"github.com/FrenaldyH/CertSend/internal/csvmap"
+
+	"github.com/FrenaldyH/CertSend/internal/certificate"
 
 	"github.com/wneessen/go-mail"
 )
@@ -104,5 +108,3 @@ func SendCertificates(certPath string, csvPath string, smtp SMTPConfig, delay ti
 
 	return mailer.SendBatch(matched, client, delay)
 }
-
-

@@ -7,8 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"CertSend/internal/matcher"
-	"CertSend/pkg/logger"
+	"github.com/FrenaldyH/CertSend/pkg/logger"
+
+	"github.com/FrenaldyH/CertSend/internal/matcher"
 
 	"github.com/wneessen/go-mail"
 )

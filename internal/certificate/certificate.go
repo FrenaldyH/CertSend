@@ -1,12 +1,13 @@
 package certificate
 
 import (
-	"CertSend/pkg/logger"
 	"archive/zip"
 	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+
+	"github.com/FrenaldyH/CertSend/pkg/logger"
 )
 
 // Certificate holds a single certificate file loaded into memory,
